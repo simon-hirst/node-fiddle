@@ -1,12 +1,44 @@
-const getNotes = require('./notes')
+const yargs = require('yargs')
 const chalk = require('chalk')
+const getNotes = require('./notes')
 
-const command = process.argv[2]
+// customise yargs version
+yargs.version('1.1.0')
 
-console.log(process.argv)
+// Create add command
+yargs.command({
+    command: 'add',
+    describe: 'Adds a new note',
+    handler: function (){
+        console.log('adding a new note')
+    }
+})
 
-if(command === 'add'){
-    console.log('adding note')
-} else if(command === 'remove'){
-    console.log('removing note')
-}
+// Create remove command
+yargs.command({
+    command: 'remove',
+    describe: 'Removes a new note',
+    handler: function (){
+        console.log('removing a note')
+    }
+})
+
+// Create read command
+yargs.command({
+    command: 'read',
+    describe: 'Reads a note',
+    handler: function (){
+        console.log('reading note')
+    }
+})
+
+// Create list command
+yargs.command({
+    command: 'list',
+    describe: 'Lists a note',
+    handler: function (){
+        console.log('listing note')
+    }
+})
+
+console.log(yargs.argv)
