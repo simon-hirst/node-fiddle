@@ -12,5 +12,10 @@
     "chalk": "^4.0.0",
     "validator": "^13.0.0",
     "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }
