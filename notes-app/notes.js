@@ -39,7 +39,7 @@ const removeNote = (title) => {
   const notes = loadNotes();
   const newNotes = notes.filter((note) => note.title !== title);
 
-  if (newNotes.length > notes.length) {
+  if (notes.length === newNotes.length) {
     console.log(chalk.bgRed('no note found'));
   } else {
     console.log(chalk.bgGreenBright(`removed note ${title}`));
