@@ -7,3 +7,9 @@ request({url: url, json: true}, (error, response) => {
         `. It is currently ${response.body.current.temperature}c with a` +
         ` ${response.body.current.precip}% chance of rain.`)
 })
+
+const mapboxUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoibXJsb2cxMDEiLCJhIjoiY2tidW1wYXVsMDM4cDJ6cW51MnloczdhYiJ9.WJ7bPao7ldi54nsiHrSl1g&limit=1"
+
+request({url: mapboxUrl, json: true}, (error, response) => {
+    console.log(`long ${response.body.features[0].center[0]} lat ${response.body.features[0].center[1]}`)
+})
